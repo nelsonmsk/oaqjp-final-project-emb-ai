@@ -13,6 +13,8 @@ def emot_detector():
     joy = response['joy']
     sadness = response['sadness']
     dominant = response['dominant_emotion']
+    if dominant is None:
+        return "Invalid text ! Please try again!."
     return "For the given statement, the system response is 'anger': {}, 'disgust': {}, 'fear': {}, 'joy': {}, 'sadness': {}. The dominant emotion is {}".format(anger, disgust, fear, joy, sadness, dominant)
 
 @app.route("/")
